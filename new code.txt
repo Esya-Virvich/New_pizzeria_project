@@ -1,0 +1,121 @@
+print("Welcome to our pizzeria!)))")
+print("Now we want to know more about you!) Please register")
+age_of_user = str(input("How old are you?"))
+name_of_user = str(input("What is your name?"))
+comment_from_user = str(input("If you want, leave a comment about yourself!)))"))
+new_user = age_of_user + name_of_user + comment_from_user
+user_base = "start"
+user_base = user_base + new_user
+number_of_pizzas = int(input("How many pizzas do you want to buy?"))
+number_of_drinks = int(input("How many drinks do you want to buy?"))
+number_of_snacks = int(input("How many snacks do you want to buy?"))
+i = 1
+d = 1
+f = 1
+price_of_snacks = 0
+price_of_pizzas = 0
+price_of_drinks = 0
+list_of_basket = "Let's start!"
+price_of_basket = 0
+while i <= number_of_pizzas:
+    change = int(input("Пепперони(549руб) - 1, сырная(399руб) - 2, барбекю(649руб) = 3"))
+    if change == 1:
+        new_pizza = "Пепперони"
+        price_of_pizza = 549
+        price_of_basket = price_of_basket + price_of_pizza
+        list_of_basket = list_of_basket + new_pizza
+        print("Сейчас у вас в корзине",i,"пицц(a). На сумму:",price_of_basket)
+        price_of_pizzas = price_of_pizzas + 549
+    elif change == 2:
+        new_pizza = "Сырная"
+        price_of_pizza = 399
+        price_of_basket = price_of_basket + price_of_pizza
+        list_of_basket = list_of_basket + new_pizza
+        print("Сейчас у вас в корзине",i,"пицц(a). На сумму:",price_of_basket)
+        price_of_pizzas = price_of_pizzas + 399
+    elif change == 3:
+        new_pizza = "Барбекю"
+        price_of_pizza = 649
+        price_of_basket = price_of_basket + price_of_pizza
+        list_of_basket = list_of_basket + new_pizza
+        print("Сейчас у вас в корзине",i,"пицц(a). На сумму:",price_of_basket)
+        price_of_pizzas = price_of_pizzas + 649
+    else:
+        print("Кажется вы ошиблись, повторите ваш выбор, пожалуйста")
+    i = i + 1    
+while d <= number_of_drinks:
+    change = int(input("Кола(89руб) - 1, Сок(59руб) - 2, Спрайт(79руб) = 3"))
+    if change == 1:
+        new_drink = "Кола"
+        price_of_drink = 89
+        price_of_basket = price_of_basket + price_of_drink
+        list_of_basket = list_of_basket + new_drink
+        print("Сейчас у вас в корзине",i,"пицц(a). И", d, 'напитков. Общая сумма:', price_of_basket)
+        price_of_drinks = price_of_drinks + 89
+    elif change == 2:
+        new_pizza = "Cок"
+        price_of_pizza = 59
+        price_of_basket = price_of_basket + price_of_pizza
+        list_of_basket = list_of_basket + new_pizza
+        print("Сейчас у вас в корзине",i,"пицц(a). И", d, 'напитков. Общая сумма:', price_of_basket)
+        price_of_drinks = price_of_drinks + 59
+    elif change == 3:
+        new_pizza = "Спрайт"
+        price_of_pizza = 79
+        price_of_basket = price_of_basket + price_of_pizza
+        list_of_basket = list_of_basket + new_pizza
+        print("Сейчас у вас в корзине",i,"пицц(a). И", d, 'напитков. Общая сумма:', price_of_basket)
+        price_of_drinks = price_of_drinks + 79
+    else:
+        print("Кажется вы ошиблись, повторите ваш выбор, пожалуйста")
+    d = d + 1    
+while f <= number_of_snacks:
+    change = int(input("Фри(149руб) - 1, Стрипсы(169руб) - 2, Наггетсы(99руб) = 3"))
+    if change == 1:
+        new_snack = "Фри"
+        price_of_snack = 149
+        price_of_basket = price_of_basket + price_of_snack
+        list_of_basket = list_of_basket + new_snack
+        print("Сейчас у вас в корзине",i,"пицц(a). И", d, 'напитков. И", f,"снеков","Общая сумма:', price_of_basket)
+        price_of_snacks = price_of_snacks + 149
+    elif change == 2:
+        new_snack = "Стрипсы"
+        price_of_snack = 169
+        price_of_basket = price_of_basket + price_of_snack
+        list_of_basket = list_of_basket + new_snack
+        print("Сейчас у вас в корзине",i,"пицц(a). И", d, 'напитков. И", f,"снеков","Общая сумма:', price_of_basket)
+        price_of_snacks = price_of_snacks + 169
+    elif change == 3:
+        new_snack = "Наггетсы"
+        price_of_snack = 99
+        price_of_basket = price_of_basket + price_of_snack
+        list_of_basket = list_of_basket + new_snack
+        print("Сейчас у вас в корзине",i,"пицц(a). И", d, 'напитков. И", f,"снеков","Общая сумма:', price_of_basket)
+        price_of_snacks = price_of_snacks + 99 
+    else:
+        print("Кажется вы ошиблись, повторите ваш выбор, пожалуйста")
+    f = f + 1    
+print("Select payment type")
+payment_method = int(input("Cash - 1, By bank card - 2"))
+if payment_method == 1:
+    payment = int(input("You need to pay:", price_of_basket, "How much do you want to deposit?"))
+    сhange = price_of_basket - payment
+    print("Okay, let's pretend that you swiped your card")
+    print("Your change:", change)
+elif payment_method == 2:
+    print("Can you hear that? It's your money rustling ;)")
+
+def my_decorator():
+    def wrapper():
+        print("         Your bill            ")
+        print("______________________________")
+        print(pizzas_and_price)
+        print("______________________________")
+        print(drinks_and_price)
+        print("______________________________")
+        print(snacks_and_price)
+        print("______________________________")
+        
+    return wrapper
+
+my_decorator
